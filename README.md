@@ -11,9 +11,9 @@ Steps to be followed to get the default folders are as follows.
 ### Install npm and yarn before creating the react folder.
 
 ### Initiliaze the react app by typing the following in the terminal,
-npm init react-app react-profile
+npm init react-app react-wyat
 
-Here, react-profile is the folder/project name.
+Here, react-wyat is the folder/project name.
 
 ### To add routes to the app, type the following in the terminal,
 yarn add react-router-dom
