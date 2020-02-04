@@ -2,6 +2,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## The Whatyallthink website design using React JS.
 
+## About Whatyallthink
+
+Watch ya think - social media where people vote their opinions on everything human but mostly how does this look on me?
+
 Steps to be followed to get the default folders are as follows.
 
 ### Install npm and yarn before creating the react folder.
