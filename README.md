@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## The Whatyall website design using React JS.
+## The Whatyallthink website design using React JS.
 
 Steps to be followed to get the default folders are as follows.
 
