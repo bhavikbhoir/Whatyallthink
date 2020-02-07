@@ -12,6 +12,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from './components/Footer';
 import Options from './components/Options'; 
 import Settings from './components/Settings';
+import Login from './components/Login';
+import Signup from './components/SignUp';
  
 class App extends Component {
   render() {
@@ -26,6 +28,8 @@ class App extends Component {
              <Route path="/profile" component={Profile}/>
              <Route path="/options" component={Options}/>
              <Route path="/settings" component={Settings}/>
+             <Route path="/login" component={Login}/>
+             <Route path="/signup" component={Signup}/>
             <Route component={Error}/>
            </Switch>
            <Footer />

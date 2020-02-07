@@ -9,7 +9,7 @@ const Styles = styled.div`
 .row{
     display: inline-flex;    
     width: 100vw;
-    height: 100px;;
+    height: auto;
     background-color: #d0e9ed;
 }
 .col1{
@@ -40,6 +40,23 @@ const Styles = styled.div`
     text-decoration: none;
     font-weight: bold;
     font-size: 20px;
+}
+@media screen and (max-width:632px){
+    .col2 {
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+    .col2 li{
+        padding: 8px;
+    }
+}
+@media screen and (max-width:992px){
+    .col2{
+        width: 100%;
+        display: block;
+        background-color: #d0e9ed;
+    }
 }
 `;
 

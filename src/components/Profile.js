@@ -67,11 +67,13 @@ const Styles = styled.div`
     background-color: #d0e9ed;
     text-decoration: none;
     text-align: center;
-    padding: 0.5rem 1rem;
+    padding: 0.125rem 1rem;
 }
-.signout a{
+.signout .btn-primary{
+    border: none;
     color: #0D5863;
-    text-decoration: none;
+    border-color: #0D5863;
+    background-color: #d0e9ed;
 }
 .users{
     margin: 25px 0px;
@@ -535,7 +537,10 @@ const Profile = () => {
 
                     <Col lg={2} sm={12}>
                         <div class="signout">
-                            <a href="/">Sign Out</a>
+                            <DropdownButton as={ButtonGroup} title="My Account" id="bg-nested-dropdown">
+                                <Dropdown.Item href="/Login" eventKey="1">Switch Account</Dropdown.Item>
+                                <Dropdown.Item href="/" eventKey="2">Sign Out</Dropdown.Item>
+                            </DropdownButton>
                         </div>
                         
                     </Col>
