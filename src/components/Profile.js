@@ -4,6 +4,7 @@ import Tabs from 'react-bootstrap/Tabs'
 import Tab from 'react-bootstrap/Tab';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Row, Col, Button } from 'react-bootstrap';
+
 import img from '../assets/HomeBG.png';
 import bravo from '../assets/bravo.jpg';
 import mario from '../assets/mario.jpg';
@@ -13,7 +14,6 @@ import Media from 'react-bootstrap/Media';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
-
 import Emojify from 'react-emojione';
 
 const Styles = styled.div`

@@ -8,13 +8,14 @@ import Error from './components/Error';
 import Navigation from './components/Navigation';
 import Profile from './components/Profile';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from './components/Footer';
 import Options from './components/Options'; 
 import Settings from './components/Settings';
 import Login from './components/Login';
 import Signup from './components/SignUp';
- 
+
+import 'bootstrap/dist/css/bootstrap.min.css'; 
+
 class App extends Component {
   render() {
     return (      

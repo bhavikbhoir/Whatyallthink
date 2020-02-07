@@ -3,11 +3,9 @@ import styled from 'styled-components';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Row, Col, Button, Container } from 'react-bootstrap';
 import logo from '../assets/logo.png';
-
 import img from '../assets/HomeBG.png';
 import Media from 'react-bootstrap/Media';
 import Form from 'react-bootstrap/Form';
-import FormControl from 'react-bootstrap/FormControl';
 
 const Styles = styled.div`
 .LoginContent{
