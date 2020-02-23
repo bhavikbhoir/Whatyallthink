@@ -8,9 +8,10 @@ import { MdSettings } from "react-icons/md";
 const Styles = styled.div`
 .row{
     display: inline-flex;    
-    width: 100vw;
+    width: 100%;
     height: auto;
     background-color: #d0e9ed;
+    margin: 0px;
 }
 .col1{
     width: 30%;
