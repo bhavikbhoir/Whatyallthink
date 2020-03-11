@@ -3,16 +3,13 @@ import styled from 'styled-components';
 import img from '../assets/HomeBG.png';
 import dino from '../assets/dino.jpg';
 import mario from '../assets/mario.jpg';
-
 import { Container } from 'react-bootstrap';
 import Media from 'react-bootstrap/Media';
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
-
 import Emojify from 'react-emojione';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Styles = styled.div`
@@ -67,6 +64,7 @@ h6{
 .dropdown-toggle::after {
     content: none;
 }
+
 `;
 
 const home = () => {
