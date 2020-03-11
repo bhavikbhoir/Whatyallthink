@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-
 import { Container, Button, Row, Col } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import img from '../assets/HomeBG.png';
@@ -15,6 +14,9 @@ import FormControl from 'react-bootstrap/FormControl';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Emojify from 'react-emojione';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {
+    BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
+  } from 'recharts';
 
 const Styles = styled.div`
 .content{
@@ -110,7 +112,33 @@ img{
 }
 `;
 
+const data = [
+    {
+      name: 'Reach', votes: 22400,
+    },
+    {
+      name: 'Dislike', votes: 10450,
+    },
+    {
+      name: 'Fire',  votes: 18290,
+    },
+  ];
+
+
 const Options = () => {
+    function MyFunction() {
+
+        const monthNames = ["January", "February", "March", "April", "May", "June",
+          "July", "August", "September", "October", "November", "December"
+        ];
+          var tempDate = new Date();
+          var date = tempDate.getDate()+(tempDate.getDate() % 10 == 1 && tempDate.getDate() != 11 ? 'st' : (tempDate.getDate() % 10 == 2 && tempDate.getDate() != 12 ? 'nd' : (tempDate.getDate() % 10 == 3 && tempDate.getDate() != 13 ? 'rd' : 'th'))) + ' ' + monthNames[tempDate.getMonth()] + ' ' + tempDate.getFullYear() +' '+ tempDate.getHours() +':'+ tempDate.getMinutes()+':'+ tempDate.getSeconds() + ' '+ ((tempDate.getHours() < 12) ? "AM" : "PM");
+          const currDate = "Posted on "+date;
+          return (
+            <p>{currDate}</p>
+          );
+        }
+
     return (
         <Styles>
             <div class="content">
@@ -120,7 +148,21 @@ const Options = () => {
                     <Card>
                         <Card.Body>
                             <Card.Title><h3>Voting Results</h3></Card.Title>
-                            <Card.Img variant="top" src={require('../assets/Graph.png')} />
+                            {/* <Card.Img variant="top" src={require('../assets/Graph.png')} /> */}
+                            <BarChart
+                                width={350}
+                                height={350}
+                                data={data}
+                                margin={{
+                                top: 5, right: 30, left: 20, bottom: 5,
+                                }}
+                            >
+                                <XAxis dataKey="name" />
+                                <YAxis />
+                                <Tooltip />
+                                <Legend />
+                                <Bar dataKey="votes" fill="#0D5863" />
+                            </BarChart>
                         </Card.Body>
                     </Card>
                     </Col>
@@ -152,7 +194,7 @@ const Options = () => {
                             The Food at Del tacos is great.
                             </p>
                             <p className="text-center">
-                            02 February, 2020 15:10 p.m
+                                <MyFunction /> 
                             </p>
                         </Media.Body> 
                     </Media>
