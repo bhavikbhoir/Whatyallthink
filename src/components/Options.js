@@ -14,9 +14,7 @@ import FormControl from 'react-bootstrap/FormControl';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Emojify from 'react-emojione';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {
-    BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
-  } from 'recharts';
+import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 
 const Styles = styled.div`
 .content{
@@ -25,6 +23,9 @@ const Styles = styled.div`
     margin: 50px 0px;
     background-image: url(${img});
     background-size: contain;
+}
+.row{
+    justify-content: center;
 }
 .columns{
     margin: 25px;
@@ -77,14 +78,21 @@ img{
     border: none;
     background: none;
 }
-.options .btn{
+.options #bg-nested-dropdown{
+    font-size: 30px;
+}
+.options .dropdown-item{
     border: none;
     background: none;
-    font-size: 30px;
+    font-size: 16px;
     font-style: bold;
     color: #0D5863;
 }
-
+.dropdown-toggle{
+    background-color: white;
+    color: #0D5863;
+    border: none;
+}
 .dropdown-toggle::after {
     content: none;
 }
@@ -126,7 +134,7 @@ const data = [
 
 
 const Options = () => {
-    function MyFunction() {
+    function DateTime() {
 
         const monthNames = ["January", "February", "March", "April", "May", "June",
           "July", "August", "September", "October", "November", "December"
@@ -144,7 +152,7 @@ const Options = () => {
             <div class="content">
                 <div class="columns">
                 <Row>
-                    <Col lg={3} sm={12}>
+                    <Col xl={3} lg={6} md={12} sm={12}>
                     <Card>
                         <Card.Body>
                             <Card.Title><h3>Voting Results</h3></Card.Title>
@@ -154,7 +162,7 @@ const Options = () => {
                                 height={350}
                                 data={data}
                                 margin={{
-                                top: 5, right: 30, left: 20, bottom: 5,
+                                top: 5, right: 10, left: 10, bottom: 5,
                                 }}
                             >
                                 <XAxis dataKey="name" />
@@ -167,7 +175,7 @@ const Options = () => {
                     </Card>
                     </Col>
 
-                    <Col lg={5} sm={12}>
+                    <Col xl={4} lg={6} sm={12}>
                     <div class="postsection">
 
                     <Media>
@@ -185,8 +193,12 @@ const Options = () => {
                                 </div>
                             <div class="options">
                             <DropdownButton as={ButtonGroup} title="..." id="bg-nested-dropdown">
-                            <Dropdown.Item eventKey="1">Block User</Dropdown.Item>
-                            <Dropdown.Item eventKey="2">Report Post</Dropdown.Item>
+                            <Dropdown.Item eventKey="1" onClick={(e) => { if (window.confirm('Are you sure you want to block this user?')) this.deleteItem(e) } }>
+                                Block User
+                            </Dropdown.Item>
+                            <Dropdown.Item eventKey="2" onClick={(e) => { if (window.confirm('Are you sure you want to report this post?')) this.deleteItem(e) } }>
+                                Report Post
+                            </Dropdown.Item>
                             </DropdownButton>
                             </div>   
                             </div>
@@ -194,7 +206,7 @@ const Options = () => {
                             The Food at Del tacos is great.
                             </p>
                             <p className="text-center">
-                                <MyFunction /> 
+                                <DateTime /> 
                             </p>
                         </Media.Body> 
                     </Media>
@@ -227,7 +239,7 @@ const Options = () => {
                     </div> 
                     </Col>
                     
-                    <Col lg={4} sm={12}>
+                    <Col xl={4} lg={12} sm={12}>
                     <div class="replies">
                     <Card.Title><h3>Replies</h3></Card.Title>
                     <Media>
@@ -245,8 +257,12 @@ const Options = () => {
                                 </div>
                             <div class="options">
                             <DropdownButton as={ButtonGroup} title="..." id="bg-nested-dropdown">
-                            <Dropdown.Item eventKey="1">Block User</Dropdown.Item>
-                            <Dropdown.Item eventKey="2">Report Post</Dropdown.Item>
+                            <Dropdown.Item eventKey="1" onClick={(e) => { if (window.confirm('Are you sure you want to block this user?')) this.deleteItem(e) } }>
+                                Block User
+                            </Dropdown.Item>
+                            <Dropdown.Item eventKey="2" onClick={(e) => { if (window.confirm('Are you sure you want to report this post?')) this.deleteItem(e) } }>
+                                Report Post
+                            </Dropdown.Item>
                             </DropdownButton>
                             </div>   
                             </div>
@@ -282,8 +298,12 @@ const Options = () => {
                         </Media.Body>
                         <div class="options">
                         <DropdownButton as={ButtonGroup} title="..." id="bg-nested-dropdown">
-                            <Dropdown.Item eventKey="1">Block User</Dropdown.Item>
-                            <Dropdown.Item eventKey="2">Report Post</Dropdown.Item>
+                        <Dropdown.Item eventKey="1" onClick={(e) => { if (window.confirm('Are you sure you want to block this user?')) this.deleteItem(e) } }>
+                            Block User
+                        </Dropdown.Item>
+                        <Dropdown.Item eventKey="2" onClick={(e) => { if (window.confirm('Are you sure you want to report this post?')) this.deleteItem(e) } }>
+                            Report Post
+                        </Dropdown.Item>
                         </DropdownButton>
                         </div>
                     </Media>  
@@ -303,8 +323,12 @@ const Options = () => {
                                 </div>
                             <div class="options">
                             <DropdownButton as={ButtonGroup} title="..." id="bg-nested-dropdown">
-                            <Dropdown.Item eventKey="1">Block User</Dropdown.Item>
-                            <Dropdown.Item eventKey="2">Report Post</Dropdown.Item>
+                            <Dropdown.Item eventKey="1" onClick={(e) => { if (window.confirm('Are you sure you want to block this user?')) this.deleteItem(e) } }>
+                                Block User
+                            </Dropdown.Item>
+                            <Dropdown.Item eventKey="2" onClick={(e) => { if (window.confirm('Are you sure you want to report this post?')) this.deleteItem(e) } }>
+                                Report Post
+                            </Dropdown.Item>
                             </DropdownButton>
                             </div>   
                             </div>

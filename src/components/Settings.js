@@ -32,6 +32,7 @@ const Styles = styled.div`
  }
 .row{
     justify-content: center;
+    margin: 0px;
  }
 .columns{
     margin: 25px 0px 10px 0px;
