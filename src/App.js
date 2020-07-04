@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './components/Home';
 import Explore from './components/Explore';
 import Notifications from './components/Notifications';
@@ -17,7 +17,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 class App extends Component {
   render() {
     return (
-       <HashRouter>
+       <BrowserRouter>
         <div>
           <Navigation />
             <Switch>
@@ -33,7 +33,7 @@ class App extends Component {
            </Switch>
            <Footer />
         </div> 
-      </HashRouter>
+      </BrowserRouter>
     );
   }
 }
