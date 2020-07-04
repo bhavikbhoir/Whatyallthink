@@ -17,12 +17,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 class App extends Component {
   render() {
     return (
-       <BrowserRouter>
+      //  <BrowserRouter>
         <div>
           <Navigation />
             <Switch>
-             <Route path="/" component={Home}/>
-             <Route path="/explore" component={Explore}/>
+             <Route exact path="/" component={Home}/>
+             <Route exact path="/explore" component={Explore}/>
              <Route path="/notifications" component={Notifications}/>
              <Route path="/profile" component={Profile}/>
              <Route path="/options" component={Options}/>
@@ -33,7 +33,7 @@ class App extends Component {
            </Switch>
            <Footer />
         </div> 
-      </BrowserRouter>
+      // </BrowserRouter>
     );
   }
 }
