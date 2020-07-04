@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
- 
 import Home from './components/Home';
 import Explore from './components/Explore';
 import Notifications from './components/Notifications';
@@ -22,9 +21,7 @@ class App extends Component {
         <div>
           <Navigation />
             <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
+             <Route path="/" component={Home}/>
              <Route path="/explore" component={Explore}/>
              <Route path="/notifications" component={Notifications}/>
              <Route path="/profile" component={Profile}/>
