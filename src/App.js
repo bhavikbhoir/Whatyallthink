@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import Home from './components/Home';
 import Explore from './components/Explore';
 import Notifications from './components/Notifications';
@@ -17,28 +17,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 class App extends Component {
   render() {
     return (
-      // <div>
-      // <Navigation />
-      // <Router>
-      //   <Switch>
-      //     <Route path="/">
-      //       <Home />
-      //     </Route>
-      //     <Route path="/explore">
-      //       <Explore />
-      //     </Route>
-      //     <Route path="/notifications">
-      //       <Notifications />
-      //     </Route>
-      //     <Route path="/profile">
-      //       <Profile />
-      //     </Route>
-      //   </Switch>
-      // </Router>
-      // <Footer />      
-      // </div>
-
-       <BrowserRouter>
+       <HashRouter>
         <div>
           <Navigation />
             <Switch>
@@ -54,7 +33,7 @@ class App extends Component {
            </Switch>
            <Footer />
         </div> 
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }
