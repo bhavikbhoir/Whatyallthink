@@ -7,7 +7,6 @@ import Notifications from './components/Notifications';
 import Error from './components/Error';
 import Navigation from './components/Navigation';
 import Profile from './components/Profile';
-
 import Footer from './components/Footer';
 import Options from './components/Options'; 
 import Settings from './components/Settings';
@@ -23,7 +22,9 @@ class App extends Component {
         <div>
           <Navigation />
             <Switch>
-             <Route path="/" component={Home} exact/>
+            <Route exact path="/">
+              <Home />
+            </Route>
              <Route path="/explore" component={Explore}/>
              <Route path="/notifications" component={Notifications}/>
              <Route path="/profile" component={Profile}/>
