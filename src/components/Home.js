@@ -11,7 +11,7 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
 import Emojify from 'react-emojione';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../index.scss'
+// import '../index.scss'
 
 const Styles = styled.div`
 .HomeContent {
