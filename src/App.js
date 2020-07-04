@@ -16,24 +16,45 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
   render() {
-    return (      
-       <BrowserRouter>
-        <div>
-          <Navigation />
-            <Switch>
-             <Route path="/" component={Home}/>
-             <Route path="/explore" component={Explore}/>
-             <Route path="/notifications" component={Notifications}/>
-             <Route path="/profile" component={Profile}/>
-             <Route path="/options" component={Options}/>
-             <Route path="/settings" component={Settings}/>
-             <Route path="/login" component={Login}/>
-             <Route path="/signup" component={Signup}/>
-             <Route component={Error}/>
-           </Switch>
-           <Footer />
-        </div> 
-      </BrowserRouter>
+    return (
+      <div>
+      <Navigation />
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/explore">
+            <Explore />
+          </Route>
+          <Route path="/notifications">
+            <Notifications />
+          </Route>
+          <Route path="/profile">
+            <Profile />
+          </Route>
+        </Switch>
+      </Router>
+      <Footer />      
+      </div>
+
+      //  <BrowserRouter>
+      //   <div>
+      //     <Navigation />
+      //       <Switch>
+      //        <Route path="/" component={Home}/>
+      //        <Route path="/explore" component={Explore}/>
+      //        <Route path="/notifications" component={Notifications}/>
+      //        <Route path="/profile" component={Profile}/>
+      //        <Route path="/options" component={Options}/>
+      //        <Route path="/settings" component={Settings}/>
+      //        <Route path="/login" component={Login}/>
+      //        <Route path="/signup" component={Signup}/>
+      //        <Route component={Error}/>
+      //      </Switch>
+      //      <Footer />
+      //   </div> 
+      // </BrowserRouter>
     );
   }
 }
