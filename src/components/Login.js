@@ -4,7 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Row, Col, Button, Container } from 'react-bootstrap';
 import logo from '../assets/logo.png';
 import img from '../assets/HomeBG.png';
-import Media from 'react-bootstrap/Media';
 import Form from 'react-bootstrap/Form';
 
 const Styles = styled.div`

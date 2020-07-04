@@ -31,6 +31,7 @@ const Styles = styled.div`
    float: right;
 }
 .flex-container{
+   width: auto;
    display: flex;
    flex-container: row;
    justify-content: space-around;
@@ -40,26 +41,32 @@ const Styles = styled.div`
 .Fashion .btn-primary{
    background: linear-gradient(to right, #A83279, #D38312); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
    border: none;
+   margin: 0 2px;
 }
 .Sports .btn-primary{
    background: linear-gradient(to bottom, #93F9B9, #1D976C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
    border: none;
+   margin: 0 2px;
 }
 .Food .btn-primary{
    background: linear-gradient(to right, #B06AB3, #4568DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
    border: none;
+   margin: 0 2px;
 }
 .Entertainment .btn-primary{
    background: linear-gradient(to left, #f7b733, #fc4a1a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
    border: none;
+   margin: 0 2px;
 }
 .Gaming .btn-primary{
    background: linear-gradient(to left, #29ffc6, #20e3b2, #0cebeb); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
    border: none;
+   margin: 0 2px;
 }
 .Social .btn-primary{
    background: linear-gradient(to right, #45B649, #DCE35B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
    border: none;
+   margin: 0 2px;
 }
 
 .posts{
@@ -74,7 +81,9 @@ const Styles = styled.div`
 .row{
    margin: 20px 0px;
 }
-
+#Fashion, #Sports, #Food, #Entertainment, #Gaming, #Social{
+   margin: 3px 3px;
+}
 #Fashion{
    color: white;
    background: linear-gradient(to right, #A83279, #D38312); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */

@@ -129,15 +129,23 @@ const Styles = styled.div`
         border: none;
         background: none;
     }
-    .options .btn{
+    .options .dropdown-item{
         border: none;
         background: none;
-        font-size: 20px;
+        font-size: 16px;
         font-style: bold;
         color: #0D5863;
     }
+    .dropdown-toggle{
+        background-color: white;
+        color: #0D5863;
+        border: none;
+    }
     .dropdown-toggle::after {
         content: none;
+    }
+    .options #bg-nested-dropdown{
+        font-size: 30px;
     }
 }
 .followerstab, .followingtab{
@@ -327,8 +335,12 @@ const Profile = () => {
                     </Media.Body>
                         <div class="options">
                         <DropdownButton as={ButtonGroup} title="..." id="bg-nested-dropdown">
-                        <Dropdown.Item eventKey="1">Block User</Dropdown.Item>
-                        <Dropdown.Item eventKey="2">Report Post</Dropdown.Item>
+                        <Dropdown.Item eventKey="1" onClick={(e) => { if (window.confirm('Are you sure you want to block this user?')) this.deleteItem(e) } }>
+                            Block User
+                        </Dropdown.Item>
+                        <Dropdown.Item eventKey="2" onClick={(e) => { if (window.confirm('Are you sure you want to report this post?')) this.deleteItem(e) } }>
+                            Report Post
+                        </Dropdown.Item>
                         </DropdownButton>
                         </div>
                     </Media>
@@ -362,8 +374,12 @@ const Profile = () => {
                     </Media.Body>
                         <div class="options">
                         <DropdownButton as={ButtonGroup} title="..." id="bg-nested-dropdown">
-                        <Dropdown.Item eventKey="1">Block User</Dropdown.Item>
-                        <Dropdown.Item eventKey="2">Report Post</Dropdown.Item>
+                        <Dropdown.Item eventKey="1" onClick={(e) => { if (window.confirm('Are you sure you want to block this user?')) this.deleteItem(e) } }>
+                                Block User
+                        </Dropdown.Item>
+                        <Dropdown.Item eventKey="2" onClick={(e) => { if (window.confirm('Are you sure you want to report this post?')) this.deleteItem(e) } }>
+                                Report Post
+                        </Dropdown.Item>
                         </DropdownButton>
                         </div>
                     </Media>
@@ -387,8 +403,12 @@ const Profile = () => {
                             </Media.Body>
                                 <div class="options">
                                 <DropdownButton as={ButtonGroup} title="Following &#9660;" id="bg-nested-dropdown">
-                                <Dropdown.Item eventKey="1">Block User</Dropdown.Item>
-                                <Dropdown.Item eventKey="2">Unfollow</Dropdown.Item>
+                                <Dropdown.Item eventKey="1" onClick={(e) => { if (window.confirm('Are you sure you want to block this user?')) this.deleteItem(e) } }>
+                                        Block User
+                                </Dropdown.Item>
+                                <Dropdown.Item eventKey="2" onClick={(e) => { if (window.confirm('Are you sure you want to unfollow this user?')) this.deleteItem(e) } }>
+                                        Unfollow User
+                                </Dropdown.Item>
                                 </DropdownButton>
                                 </div>
                             </Media>
@@ -406,8 +426,12 @@ const Profile = () => {
                             </Media.Body>
                                 <div class="options">
                                 <DropdownButton as={ButtonGroup} title="Follow &#9660;" id="bg-nested-dropdown">
-                                <Dropdown.Item eventKey="1">Block User</Dropdown.Item>
-                                <Dropdown.Item eventKey="2">Report</Dropdown.Item>
+                                <Dropdown.Item eventKey="1" onClick={(e) => { if (window.confirm('Are you sure you want to block this user?')) this.deleteItem(e) } }>
+                                        Block User
+                                </Dropdown.Item>
+                                <Dropdown.Item eventKey="2" onClick={(e) => { if (window.confirm('Are you sure you want to report this post?')) this.deleteItem(e) } }>
+                                        Report User
+                                </Dropdown.Item>
                                 </DropdownButton>
                                 </div>
                             </Media>
@@ -425,8 +449,12 @@ const Profile = () => {
                             </Media.Body>
                                 <div class="options">
                                 <DropdownButton as={ButtonGroup} title="Follow &#9660;" id="bg-nested-dropdown">
-                                <Dropdown.Item eventKey="1">Block User</Dropdown.Item>
-                                <Dropdown.Item eventKey="2">Report</Dropdown.Item>
+                                <Dropdown.Item eventKey="1" onClick={(e) => { if (window.confirm('Are you sure you want to block this user?')) this.deleteItem(e) } }>
+                                        Block User
+                                </Dropdown.Item>
+                                <Dropdown.Item eventKey="2" onClick={(e) => { if (window.confirm('Are you sure you want to report this user?')) this.deleteItem(e) } }>
+                                        Report User
+                                </Dropdown.Item>
                                 </DropdownButton>
                                 </div>
                             </Media>
@@ -444,8 +472,12 @@ const Profile = () => {
                             </Media.Body>
                                 <div class="options">
                                 <DropdownButton as={ButtonGroup} title="Following &#9660;" id="bg-nested-dropdown">
-                                <Dropdown.Item eventKey="1">Block User</Dropdown.Item>
-                                <Dropdown.Item eventKey="2">Unfollow</Dropdown.Item>
+                                <Dropdown.Item eventKey="1" onClick={(e) => { if (window.confirm('Are you sure you want to block this user?')) this.deleteItem(e) } }>
+                                        Block User
+                                </Dropdown.Item>
+                                <Dropdown.Item eventKey="2" onClick={(e) => { if (window.confirm('Are you sure you want to unfollow this user?')) this.deleteItem(e) } }>
+                                        Unfollow
+                                </Dropdown.Item>
                                 </DropdownButton>
                                 </div>
                             </Media> 
@@ -468,8 +500,12 @@ const Profile = () => {
                             </Media.Body>
                                 <div class="options">
                                 <DropdownButton as={ButtonGroup} title="Following &#9660;" id="bg-nested-dropdown">
-                                <Dropdown.Item eventKey="1">Block User</Dropdown.Item>
-                                <Dropdown.Item eventKey="2">Unfollow</Dropdown.Item>
+                                <Dropdown.Item eventKey="1" onClick={(e) => { if (window.confirm('Are you sure you want to block this user?')) this.deleteItem(e) } }>
+                                        Block User
+                                </Dropdown.Item>
+                                <Dropdown.Item eventKey="2" onClick={(e) => { if (window.confirm('Are you sure you want to unfollow this user?')) this.deleteItem(e) } }>
+                                        Unfollow
+                                </Dropdown.Item>
                                 </DropdownButton>
                                 </div>
                             </Media>
@@ -487,8 +523,12 @@ const Profile = () => {
                             </Media.Body>
                                 <div class="options">
                                 <DropdownButton as={ButtonGroup} title="Following &#9660;" id="bg-nested-dropdown">
-                                <Dropdown.Item eventKey="1">Block User</Dropdown.Item>
-                                <Dropdown.Item eventKey="2">Unfollow</Dropdown.Item>
+                                <Dropdown.Item eventKey="1" onClick={(e) => { if (window.confirm('Are you sure you want to block this user?')) this.deleteItem(e) } }>
+                                        Block User
+                                </Dropdown.Item>
+                                <Dropdown.Item eventKey="2" onClick={(e) => { if (window.confirm('Are you sure you want to unfollow this user?')) this.deleteItem(e) } }>
+                                        Unfollow
+                                </Dropdown.Item>
                                 </DropdownButton>
                                 </div>
                             </Media>
@@ -506,8 +546,12 @@ const Profile = () => {
                             </Media.Body>
                                 <div class="options">
                                 <DropdownButton as={ButtonGroup} title="Following &#9660;" id="bg-nested-dropdown">
-                                <Dropdown.Item eventKey="1">Block User</Dropdown.Item>
-                                <Dropdown.Item eventKey="2">Unfollow</Dropdown.Item>
+                                <Dropdown.Item eventKey="1" onClick={(e) => { if (window.confirm('Are you sure you want to block this user?')) this.deleteItem(e) } }>
+                                        Block User
+                                </Dropdown.Item>
+                                <Dropdown.Item eventKey="2" onClick={(e) => { if (window.confirm('Are you sure you want to unfollow this user?')) this.deleteItem(e) } }>
+                                        Unfollow
+                                </Dropdown.Item>
                                 </DropdownButton>
                                 </div>
                             </Media>
@@ -525,8 +569,12 @@ const Profile = () => {
                             </Media.Body>
                                 <div class="options">
                                 <DropdownButton as={ButtonGroup} title="Following &#9660;" id="bg-nested-dropdown">
-                                <Dropdown.Item eventKey="1">Block User</Dropdown.Item>
-                                <Dropdown.Item eventKey="2">Unfollow</Dropdown.Item>
+                                <Dropdown.Item eventKey="1" onClick={(e) => { if (window.confirm('Are you sure you want to block this user?')) this.deleteItem(e) } }>
+                                        Block User
+                                </Dropdown.Item>
+                                <Dropdown.Item eventKey="2" onClick={(e) => { if (window.confirm('Are you sure you want to unfollow this user?')) this.deleteItem(e) } }>
+                                        Unfollow
+                                </Dropdown.Item>
                                 </DropdownButton>
                                 </div>
                             </Media>

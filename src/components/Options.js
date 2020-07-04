@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-
 import { Container, Button, Row, Col } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import img from '../assets/HomeBG.png';
@@ -15,6 +14,7 @@ import FormControl from 'react-bootstrap/FormControl';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Emojify from 'react-emojione';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 
 const Styles = styled.div`
 .content{
@@ -23,6 +23,9 @@ const Styles = styled.div`
     margin: 50px 0px;
     background-image: url(${img});
     background-size: contain;
+}
+.row{
+    justify-content: center;
 }
 .columns{
     margin: 25px;
@@ -75,14 +78,21 @@ img{
     border: none;
     background: none;
 }
-.options .btn{
+.options #bg-nested-dropdown{
+    font-size: 30px;
+}
+.options .dropdown-item{
     border: none;
     background: none;
-    font-size: 30px;
+    font-size: 16px;
     font-style: bold;
     color: #0D5863;
 }
-
+.dropdown-toggle{
+    background-color: white;
+    color: #0D5863;
+    border: none;
+}
 .dropdown-toggle::after {
     content: none;
 }
@@ -110,22 +120,62 @@ img{
 }
 `;
 
+const data = [
+    {
+      name: 'Reach', votes: 22400,
+    },
+    {
+      name: 'Dislike', votes: 10450,
+    },
+    {
+      name: 'Fire',  votes: 18290,
+    },
+  ];
+
+
 const Options = () => {
+    function DateTime() {
+
+        const monthNames = ["January", "February", "March", "April", "May", "June",
+          "July", "August", "September", "October", "November", "December"
+        ];
+          var tempDate = new Date();
+          var date = tempDate.getDate()+(tempDate.getDate() % 10 == 1 && tempDate.getDate() != 11 ? 'st' : (tempDate.getDate() % 10 == 2 && tempDate.getDate() != 12 ? 'nd' : (tempDate.getDate() % 10 == 3 && tempDate.getDate() != 13 ? 'rd' : 'th'))) + ' ' + monthNames[tempDate.getMonth()] + ' ' + tempDate.getFullYear() +' '+ tempDate.getHours() +':'+ tempDate.getMinutes()+':'+ tempDate.getSeconds() + ' '+ ((tempDate.getHours() < 12) ? "AM" : "PM");
+          const currDate = "Posted on "+date;
+          return (
+            <p>{currDate}</p>
+          );
+        }
+
     return (
         <Styles>
             <div class="content">
                 <div class="columns">
                 <Row>
-                    <Col lg={3} sm={12}>
+                    <Col xl={3} lg={6} md={12} sm={12}>
                     <Card>
                         <Card.Body>
                             <Card.Title><h3>Voting Results</h3></Card.Title>
-                            <Card.Img variant="top" src={require('../assets/Graph.png')} />
+                            {/* <Card.Img variant="top" src={require('../assets/Graph.png')} /> */}
+                            <BarChart
+                                width={330}
+                                height={330}
+                                data={data}
+                                margin={{
+                                top: 5, right: 10, left: 10, bottom: 5,
+                                }}
+                            >
+                                <XAxis dataKey="name" />
+                                <YAxis />
+                                <Tooltip />
+                                <Legend />
+                                <Bar dataKey="votes" fill="#0D5863" />
+                            </BarChart>
                         </Card.Body>
                     </Card>
                     </Col>
 
-                    <Col lg={5} sm={12}>
+                    <Col xl={4} lg={6} sm={12}>
                     <div class="postsection">
 
                     <Media>
@@ -143,8 +193,12 @@ const Options = () => {
                                 </div>
                             <div class="options">
                             <DropdownButton as={ButtonGroup} title="..." id="bg-nested-dropdown">
-                            <Dropdown.Item eventKey="1">Block User</Dropdown.Item>
-                            <Dropdown.Item eventKey="2">Report Post</Dropdown.Item>
+                            <Dropdown.Item eventKey="1" onClick={(e) => { if (window.confirm('Are you sure you want to block this user?')) this.deleteItem(e) } }>
+                                Block User
+                            </Dropdown.Item>
+                            <Dropdown.Item eventKey="2" onClick={(e) => { if (window.confirm('Are you sure you want to report this post?')) this.deleteItem(e) } }>
+                                Report Post
+                            </Dropdown.Item>
                             </DropdownButton>
                             </div>   
                             </div>
@@ -152,7 +206,7 @@ const Options = () => {
                             The Food at Del tacos is great.
                             </p>
                             <p className="text-center">
-                            02 February, 2020 15:10 p.m
+                                <DateTime /> 
                             </p>
                         </Media.Body> 
                     </Media>
@@ -185,7 +239,7 @@ const Options = () => {
                     </div> 
                     </Col>
                     
-                    <Col lg={4} sm={12}>
+                    <Col xl={4} lg={12} sm={12}>
                     <div class="replies">
                     <Card.Title><h3>Replies</h3></Card.Title>
                     <Media>
@@ -203,8 +257,12 @@ const Options = () => {
                                 </div>
                             <div class="options">
                             <DropdownButton as={ButtonGroup} title="..." id="bg-nested-dropdown">
-                            <Dropdown.Item eventKey="1">Block User</Dropdown.Item>
-                            <Dropdown.Item eventKey="2">Report Post</Dropdown.Item>
+                            <Dropdown.Item eventKey="1" onClick={(e) => { if (window.confirm('Are you sure you want to block this user?')) this.deleteItem(e) } }>
+                                Block User
+                            </Dropdown.Item>
+                            <Dropdown.Item eventKey="2" onClick={(e) => { if (window.confirm('Are you sure you want to report this post?')) this.deleteItem(e) } }>
+                                Report Post
+                            </Dropdown.Item>
                             </DropdownButton>
                             </div>   
                             </div>
@@ -240,8 +298,12 @@ const Options = () => {
                         </Media.Body>
                         <div class="options">
                         <DropdownButton as={ButtonGroup} title="..." id="bg-nested-dropdown">
-                            <Dropdown.Item eventKey="1">Block User</Dropdown.Item>
-                            <Dropdown.Item eventKey="2">Report Post</Dropdown.Item>
+                        <Dropdown.Item eventKey="1" onClick={(e) => { if (window.confirm('Are you sure you want to block this user?')) this.deleteItem(e) } }>
+                            Block User
+                        </Dropdown.Item>
+                        <Dropdown.Item eventKey="2" onClick={(e) => { if (window.confirm('Are you sure you want to report this post?')) this.deleteItem(e) } }>
+                            Report Post
+                        </Dropdown.Item>
                         </DropdownButton>
                         </div>
                     </Media>  
@@ -261,8 +323,12 @@ const Options = () => {
                                 </div>
                             <div class="options">
                             <DropdownButton as={ButtonGroup} title="..." id="bg-nested-dropdown">
-                            <Dropdown.Item eventKey="1">Block User</Dropdown.Item>
-                            <Dropdown.Item eventKey="2">Report Post</Dropdown.Item>
+                            <Dropdown.Item eventKey="1" onClick={(e) => { if (window.confirm('Are you sure you want to block this user?')) this.deleteItem(e) } }>
+                                Block User
+                            </Dropdown.Item>
+                            <Dropdown.Item eventKey="2" onClick={(e) => { if (window.confirm('Are you sure you want to report this post?')) this.deleteItem(e) } }>
+                                Report Post
+                            </Dropdown.Item>
                             </DropdownButton>
                             </div>   
                             </div>
