@@ -158,8 +158,8 @@ const Options = () => {
                             <Card.Title><h3>Voting Results</h3></Card.Title>
                             {/* <Card.Img variant="top" src={require('../assets/Graph.png')} /> */}
                             <BarChart
-                                width={330}
-                                height={330}
+                                width={350}
+                                height={350}
                                 data={data}
                                 margin={{
                                 top: 5, right: 10, left: 10, bottom: 5,
